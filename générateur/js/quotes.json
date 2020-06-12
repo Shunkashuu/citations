@@ -1,0 +1,37 @@
+[
+    {
+        "sujet": "Bill gates",
+        "verbe": "eats",
+        "nom" : "potatoes"
+    },
+    {
+        "sujet": "Shakespeare",
+        "verbe": "drinks",
+        "nom": "fruits juice"
+    },
+    {
+    	"sujet": "Steve Jobs",
+        "verbe": "jumps",
+        "nom": "in parachute"
+    },
+    {
+        "sujet": "Mark Zuckerberg",
+        "verbe": "flies",
+        "nom": "to Mars"
+    },
+    {
+    	"sujet": "Elon Musk",
+        "verbe": "dances",
+        "nom": "the tango"
+    },
+    {
+        "sujet": "Molière",
+        "verbe": "writes",
+        "nom": "a fan-fiction"
+    },
+    {
+        "sujet": "Alain Turing",
+        "verbe": "drives",
+        "nom": "a Ferrari"
+    }
+]
