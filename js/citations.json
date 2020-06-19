@@ -33,5 +33,10 @@
         "sujet": "Alain Turing",
         "verbe": "conduit",
         "nom": "une Ferrari"
+    },
+    {
+        "sujet": "Archimède",
+        "verbe": "grogne",
+        "nom": "en finnois"
     }
 ]

@@ -17,6 +17,10 @@ a {
     color: white;
 }
 
+a:hover {
+    color: rgb(202, 202, 202);
+}
+
 .container {
     position: relative;
     max-width: 300px;
@@ -25,7 +29,7 @@ a {
 .card {
     position: relative;
     width: 320px;
-    height: 450px;
+    height: 500px;
     background: #232323;
     border-radius: 20px;
     overflow: hidden;
