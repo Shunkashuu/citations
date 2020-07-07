@@ -1,20 +1,20 @@
-//appel des fichiers json :
+//appel des fichiers json 
 const fr = ('js/citations.json')
 const en = ('js/quotes.json')
 
-//création de variables :
+//création de variables string
 let verbe = ""
 let nom = ""
 
-// variables pour récupérer depuis le fichier html les composants :
+// variables pour récupérer depuis le fichier html les composants 
 let btn = document.getElementById('btn')
 let btnen = document.getElementById('btnen')
 let phr = document.getElementById('phrase')
 
-//mettre les données dans un tableau array :
+//mettre les données dans un tableau array 
 let citations = []  
 
-// événément du bouton fr :
+// événément du bouton fr 
     btn.addEventListener('click', function() {
         //actualise le nombre de phrase à écrire
         let number = document.getElementById("number").value
@@ -31,7 +31,7 @@ let citations = []
             phr.appendChild(phrase)
         }
         else { //boucle pour afficher chacune des phrases  
-            for (let test = 0; test < number; test++) {
+            for (let test = 0; test < number; test++ ) {
 
                 //création variable contenant phrase et saut de ligne
                 let saut = document.createElement("br")
@@ -39,11 +39,11 @@ let citations = []
 
                 //ajoute le texte de la variable
                 phr.appendChild(phrase)
-
                 //ajoute un <br> pour le saut de ligne entre les phrases
                 phr.appendChild(saut)
             }
         }    
+        
     })
 
 
@@ -57,15 +57,15 @@ fetch(fr).then((data) => {
 //fonction random fr :
 function Random_phrase() {
                        
-    //choix au hasard d'une citation parmis la liste :
-    let random = Math.floor(Math.random() * (citations.length - 0))
+    //choix au hasard d'une citation parmis la liste 
+    let random = Math.floor(Math.random() * (citations.length)) 
     let randomSujet = citations[random]
-    let random2 = Math.floor(Math.random() * (citations.length - 0))
+    let random2 = Math.floor(Math.random() * (citations.length))
     let randomVerbe = citations[random2]
-    let random3 = Math.floor(Math.random() * (citations.length - 0))
+    let random3 = Math.floor(Math.random() * (citations.length))
     let randomNom = citations[random3]
     
-    //concaténation :
+    //concaténation 
     let phrase_random= randomSujet['sujet'] + " " + randomVerbe['verbe'] + " " + randomNom['nom']
     
     //Test de l'affichage de phrase dans la console
