@@ -2,10 +2,6 @@
 const fr = ('js/citations.json')
 const en = ('js/quotes.json')
 
-//création de variables string
-let verbe = ""
-let nom = ""
-
 // variables pour récupérer depuis le fichier html les composants 
 let btn = document.getElementById('btn')
 let btnen = document.getElementById('btnen')
@@ -13,6 +9,34 @@ let phr = document.getElementById('phrase')
 
 //mettre les données dans un tableau array 
 let citations = []  
+
+//récupérer toutes les citations depuis le lien json fr
+fetch(fr).then((data) => {
+    data.json().then((data) => {
+        citations = data
+    })
+})
+
+//fonction random fr :
+function Random_phrase() {
+                       
+    //choix au hasard d'une citation parmis la liste 
+    let random = Math.floor(Math.random() * (citations.length)) 
+    let randomSujet = citations[random]
+    let random2 = Math.floor(Math.random() * (citations.length))
+    let randomVerbe = citations[random2]
+    let random3 = Math.floor(Math.random() * (citations.length))
+    let randomNom = citations[random3]
+    
+    //concaténation 
+    let phrase_random= randomSujet['sujet'] + " " + randomVerbe['verbe'] + " " + randomNom['nom']
+    
+    //Test de l'affichage de phrase dans la console
+    console.log(phrase_random)
+    
+    //Renvoie la phrase randomisée
+    return phrase_random
+}
 
 // événément du bouton fr 
     btn.addEventListener('click', function() {
@@ -46,26 +70,25 @@ let citations = []
         
     })
 
-
-//récupérer toutes les citations depuis le lien json fr
-fetch(fr).then((data) => {
+//récupérer toutes les citations depuis le lien json en :
+fetch(en).then((data) => {
     data.json().then((data) => {
-        citations = data
+        quotes = data
     })
 })
 
-//fonction random fr :
-function Random_phrase() {
+//bouton en :
+function Random_quotes() {
                        
-    //choix au hasard d'une citation parmis la liste 
-    let random = Math.floor(Math.random() * (citations.length)) 
-    let randomSujet = citations[random]
-    let random2 = Math.floor(Math.random() * (citations.length))
-    let randomVerbe = citations[random2]
-    let random3 = Math.floor(Math.random() * (citations.length))
-    let randomNom = citations[random3]
+    //choix au hasard d'une citation parmis la liste :
+    let random = Math.floor(Math.random() * (quotes.length))
+    let randomSujet = quotes[random]
+    let random2 = Math.floor(Math.random() * (quotes.length))
+    let randomVerbe = quotes[random2]
+    let random3 = Math.floor(Math.random() * (quotes.length))
+    let randomNom = quotes[random3]
     
-    //concaténation 
+    //concaténation :
     let phrase_random= randomSujet['sujet'] + " " + randomVerbe['verbe'] + " " + randomNom['nom']
     
     //Test de l'affichage de phrase dans la console
@@ -74,8 +97,6 @@ function Random_phrase() {
     //Renvoie la phrase randomisée
     return phrase_random
 }
-
-
 
 // événément du bouton en :
 btnen.addEventListener('click', function() {
@@ -109,30 +130,4 @@ btnen.addEventListener('click', function() {
     }    
 })
 
-//récupérer toutes les citations depuis le lien json en :
-fetch(en).then((data) => {
-    data.json().then((data) => {
-        quotes = data
-    })
-})
 
-//bouton en :
-function Random_quotes() {
-                       
-    //choix au hasard d'une citation parmis la liste :
-    let random = Math.floor(Math.random() * (quotes.length - 0))
-    let randomSujet = quotes[random]
-    let random2 = Math.floor(Math.random() * (quotes.length - 0))
-    let randomVerbe = quotes[random2]
-    let random3 = Math.floor(Math.random() * (quotes.length - 0))
-    let randomNom = quotes[random3]
-    
-    //concaténation :
-    let phrase_random= randomSujet['sujet'] + " " + randomVerbe['verbe'] + " " + randomNom['nom']
-    
-    //Test de l'affichage de phrase dans la console
-    console.log(phrase_random)
-    
-    //Renvoie la phrase randomisée
-    return phrase_random
-}
